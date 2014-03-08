@@ -1,0 +1,35 @@
+<data namespace ="com.visilaw">
+    <entities>
+        <enumerations>
+            <enum name ="gender">
+                <enumentry>M</enumentry>
+                <enumentry>F</enumentry>
+            </enum>
+        </enumerations>
+        <entity name = "party">
+            <field name ="name">
+                <type>String</type>
+                <maxlenght>255</maxlenght>
+                <obligatory>true</obligatory>
+            </field>
+            <field name ="description" type="String">
+                <maxlenght>255</maxlenght>
+                <obligatory>false</obligatory>
+            </field>
+        </entity>
+        <entity name="politician">
+            <field name ="firstName"  type="String">
+                <maxlenght>255</maxlenght>
+                <obligatory>true</obligatory>
+            </field>
+            <field name ="lastName" type="String">
+                <maxlenght>255</maxlenght>
+                <obligatory>true</obligatory>
+            </field>
+            <field name ="gender" type="enum">
+                <enumname>gender</enumname>
+                <obligatory>true</obligatory>
+            </field>
+        </entity>
+    </entities>
+</data>

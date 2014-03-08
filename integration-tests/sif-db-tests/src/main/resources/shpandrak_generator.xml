@@ -1,0 +1,23 @@
+<generatorConfiguration name ='sif-tests-db'>
+    <parentConfiguration>world-root</parentConfiguration>
+    <generators>
+        <generator>
+            <class>com.shpandrak.codegen.schema.SchemaCodeGenerator</class>
+        </generator>
+        <generator>
+            <class>com.shpandrak.codegen.PojoGenerator</class>
+        </generator>
+        <generator>
+            <class>com.shpandrak.codegen.DatabaseLayerGenerator</class>
+        </generator>
+        <generator>
+            <class>com.shpandrak.codegen.xml.XMLConvertersGenerator</class>
+        </generator>
+        <generator>
+            <class>com.shpandrak.codegen.rest.RestLayerGenerator</class>
+        </generator>
+        <generator>
+            <class>com.shpandrak.codegen.webmanage.WebManageGenerator</class>
+        </generator>
+    </generators>
+</generatorConfiguration>

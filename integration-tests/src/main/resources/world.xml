@@ -1,0 +1,76 @@
+<metadata_store name = "world" namespace ="com.shpandrak.world">
+    <enumerations>
+        <enum name ="gender">
+            <enumentry>M</enumentry>
+            <enumentry>F</enumentry>
+        </enum>
+    </enumerations>
+    <entities>
+        <entity name="country">
+            <fields>
+                <string-field name ="name">
+                    <max-length>255</max-length>
+                    <mandatory>true</mandatory>
+                    <key>true</key>
+                </string-field>
+            </fields>
+        </entity>
+
+        <entity name="animal">
+        </entity>
+        <entity name="person" extends-entity="animal" persistence-entity-name="t_person">
+            <fields>
+                <string-field name ="firstName" persistence-field-name="ugly_first_name">
+                    <max-length>255</max-length>
+                    <mandatory>true</mandatory>
+<!--
+                    <field-custom-properties>
+                        <custom-property>
+                            <name>persistence-field-name</name>
+                            <value>ugly_first_name</value>
+                        </custom-property>
+                    </field-custom-properties>
+-->
+                </string-field>
+                <string-field name ="lastName">
+                    <max-length>255</max-length>
+                    <mandatory>true</mandatory>
+                </string-field>
+                <enum-field name="gender">
+                    <enum-name>gender</enum-name>
+                    <mandatory>true</mandatory>
+                </enum-field>
+                <integer-field name="height">
+                    <mandatory>true</mandatory>
+                </integer-field>
+                <date-field name ="birthDate">
+                    <mandatory>true</mandatory>
+                </date-field>
+            </fields>
+            <relations>
+                <one-to-many>
+                    <name>father</name>
+                    <mandatory>false</mandatory>
+                    <related-entity>person</related-entity>
+                </one-to-many>
+                <one-to-many>
+                    <name>mother</name>
+                    <mandatory>false</mandatory>
+                    <related-entity>person</related-entity>
+                </one-to-many>
+                <one-to-many>
+                    <name>birthCountry</name>
+                    <mandatory>true</mandatory>
+                    <related-entity>country</related-entity>
+                </one-to-many>
+                <many-to-many>
+                    <name>visitCountry</name>
+                    <mandatory>true</mandatory>
+                    <related-entity>country</related-entity>
+                </many-to-many>
+            </relations>
+
+        </entity>
+
+    </entities>
+</metadata_store>

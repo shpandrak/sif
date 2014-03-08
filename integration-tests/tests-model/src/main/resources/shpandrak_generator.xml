@@ -1,0 +1,8 @@
+<generatorConfiguration name ='sif-tests-model'>
+    <parentConfiguration>world-root</parentConfiguration>
+    <generators>
+        <generator>
+            <class>com.shpandrak.codegen.PojoGenerator</class>
+        </generator>
+    </generators>
+</generatorConfiguration>
